@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphi X </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        #result-container {
+            height: 500px;
+            /* Fixed height for the result box */
+            overflow-y: auto;
+            /* Enable scrolling when content overflows */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mx-auto p-4 pt-6">
+        <div
+            class="flex items-center justify-center bg-white bg-opacity-80 backdrop-blur-md rounded-full">
+            <span
+                class="text-xl lg:text-2xl font-bold items-center animate-gradient whitespace-pre bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent [--bg-size:300%] text-center">Graphi X - AI Math Calculator</span>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+            <div class="col-span-2 ">
+    
+                <div class="text-base lg:text-xl font-bold mb-2">Draw Here</div>
+                <canvas id="canvas" width="1200" height="800"
+                    class="border border-gray-400 w-full rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-0.5 shadow-xl transition"></canvas>
+
+                <!-- Color Palette -->
+                <div class="flex justify-center space-x-4 mt-4">
+                    <button class="color-button bg-fuchsia-400 w-8 h-8 rounded" data-color="violet"></button>
+                    <button class="color-button bg-red-700 w-8 h-8 rounded" data-color="red"></button>
+                    <button class="color-button bg-green-700 w-8 h-8 rounded" data-color="green"></button>
+                    <button class="color-button bg-blue-700 w-8 h-8 rounded" data-color="blue"></button>
+                    <button class="color-button bg-yellow-300 w-8 h-8 rounded" data-color="yellow"></button>
+                    <button class="color-button bg-orange-500 w-8 h-8 rounded" data-color="orange"></button>
+                    <button class="color-button bg-rose-300 w-8 h-8 rounded" data-color="pink"></button>
+                    <button class="color-button bg-white w-8 h-8 border border-gray-400 rounded"
+                        data-color="white"></button>
+                    <div id="eraser-button"
+                        class="flex justify-center items-center w-10 h-8 lg:w-8 cursor-pointer rounded-full shadow-2xl text-white font-semibold bg-green-700 hover:bg-green-600">
+                        <i id="toggle-icon" class="fas fa-eraser text-white"></i>
+                    </div>
+                </div>
+
+                <!-- Pen Size -->
+                <div class="flex justify-center space-x-4 mt-4">
+                    <label for="pen-size" class="font-bold">Pen Size: </label>
+                    <input id="pen-size" type="range" min="1" max="40" value="3" class="w-32">
+                    <label for="eraser-size" class="font-bold">Eraser Size: </label>
+                    <input id="eraser-size" type="range" min="1" max="70" value="3" class="w-32">
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex justify-center space-x-4 mt-4">
+                    <button id="clear-button"
+                        class="flex justify-center items-center gap-2 w-24 h-8 cursor-pointer rounded-md shadow-2xl text-white font-semibold bg-gradient-to-r from-[#fb7185] via-[#e11d48] to-[#be123c] hover:shadow-xl hover:shadow-red-500 hover:scale-105 duration-300 hover:from-[#be123c] hover:to-[#fb7185]">
+                        <i class="fa-regular fa-trash-can"></i> Clear
+                    </button>
+
+                    <!-- Eraser Button -->
+
+
+                    <!-- Updated Submit Button with Loading Spinner -->
+                    <button id="submit-button"
+                        class="flex justify-center items-center gap-2 h-8 py-2 px-4 cursor-pointer rounded-md shadow-2xl text-white font-semibold bg-gradient-to-r from-[#3b82f6] via-[#2563eb] to-[#1d4ed8] hover:shadow-xl hover:shadow-blue-500 hover:scale-105 duration-300 hover:from-[#1d4ed8] hover:to-[#3b82f6]">
+                        <span id="submit-text">Calculate</span>
+                        <svg id="loading-spinner" class="animate-spin h-5 w-5 ml-2 hidden"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
+                            </circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Result Box with Fixed Height -->
+            <div>
+                <div class="text-center text-xl font-bold mb-2">Result</div>
+                <div id="result-container" class="bg-gray-100 p-4 rounded-lg shadow-md lg:col-start-3">
+                    <div id="result" class="space-y-2"></div> <!-- Container for results -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>

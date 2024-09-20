@@ -5,3 +5,5 @@ __pycache__
 .env
 .DS_Store
 .vscode
+cloudflared.deb
+docker-compose.yml

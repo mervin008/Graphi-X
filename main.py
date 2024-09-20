@@ -11,7 +11,7 @@ from fastapi.responses import HTMLResponse
 async def lifespan(app: FastAPI):
     yield
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI(lifespan=lifespan, docs_url=None, redoc_url=None)
 
 app.add_middleware(
     CORSMiddleware,

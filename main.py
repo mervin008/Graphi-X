@@ -2,7 +2,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
-from apps.calculator.utils import router as calculator_router
+from apps.utils import router as calculator_router
 from config import SERVER_URL, PORT, ENV
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse

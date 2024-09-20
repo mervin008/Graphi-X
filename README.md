@@ -6,5 +6,5 @@ Graphi X is an innovative AI-powered math calculator that leverages advanced dra
 
 - **Frontend:** HTML, CSS, JavaScript (with Tailwind CSS and Font Awesome)
 - **Backend:** FastAPI for serving the application and handling API requests
-- **AI Integration:** Gemini AI for processing and interpreting drawn expressions
+- **AI Integration:** Gemini AI for processing and interpreting drawn expressions 
 
